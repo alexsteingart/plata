@@ -313,6 +313,8 @@ if plata.settings.PLATA_STOCK_TRACKING:
             'Product model %r must have a field named `items_in_stock`' % (
                 product_model,
             ))
+    except:
+        pass
 
     signals.post_delete.connect(
         update_items_in_stock,
